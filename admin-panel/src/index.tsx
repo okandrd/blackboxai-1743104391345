@@ -1,8 +1,13 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(_jsx(React.StrictMode, { children: _jsx(App, {}) }));
+import { AuthProvider } from './contexts/AuthContext';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>
+);
